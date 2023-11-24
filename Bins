@@ -1,0 +1,6 @@
+marks <- c(55, 60, 71, 63, 55, 65, 50, 55, 58, 59, 61, 63, 65, 67, 71, 72, 75)
+df <- data.frame(Marks = marks)
+df$EqualFrequencyBins <- cut(df$Marks, breaks=3, labels=c("Bin1", "Bin2", "Bin3"))
+hist(df$Marks, breaks=3, main="Histogram with Equal-Frequency Partitioning", xlab="Marks", col="lightblue")
+df$EqualWidthBins <- cut(df$Marks, breaks=seq(min(df$Marks), max(df$Marks), length.out=4), labels=c("Bin1", "Bin2", "Bin3"))
+hist(df$Marks, breaks=seq(min(df$Marks), max(df$Marks), length.out=4), main="Histogram with Equal-Width Partitioning", xlab="Marks", col="lightgreen")
