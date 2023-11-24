@@ -1,0 +1,26 @@
+n_A <- median(classA)
+range_A <- max(classA) - min(classA)
+
+mean_B <- mean(classB)
+median_B <- median(classB)
+range_B <- max(classB) - min(classB)
+
+# Print the results
+cat("Class A:\n")
+cat("Mean:", mean_A, "\n")
+cat("Median:", median_A, "\n")
+cat("Range:", range_A, "\n\n")
+
+cat("Class B:\n")
+cat("Mean:", mean_B, "\n")
+cat("Median:", median_B, "\n")
+cat("Range:", range_B, "\n")
+
+# Create a boxplot
+boxplot(classA, classB, names = c("Class A", "Class B"), col = c("blue", "red"), main = "Boxplot of Class A and Class B")
+
+# Add labels
+xlabel <- c("Class A", "Class B")
+ylabel <- "Scores"
+title <- "Boxplot of Class A and Class B"
+boxplot(classA, classB, names = xlabel, col = c("blue", "red"), main = title, ylab = ylabel)
